@@ -1,0 +1,1 @@
+Working terminal. The resources folder has a sample student submission from Trina's class to try it out with. Currently, it won't work if you've already uploaded the zip file, so you'll have to delete the existing subfolder from the 'sandboxes' folder in the backend and reupload.
