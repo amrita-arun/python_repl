@@ -1,0 +1,27 @@
+{
+    "family": "my-pty-gateway",                           
+    "networkMode": "awsvpc",                             
+    "requiresCompatibilities": ["FARGATE"],
+    "cpu": "256",                                         
+    "memory": "512",                                    
+    "executionRoleArn": "arn:aws:iam::597486495258:role/ecsTaskExecutionRole",
+    "taskRoleArn":      "arn:aws:iam::597486495258:role/ecsPtyTaskRole",
+    "containerDefinitions": [
+      {
+        "name": "my-pty-gateway",
+        "image": "597486495258.dkr.ecr.us-west-2.amazonaws.com/python-repl/pty-gateway:latest",
+        "portMappings": [
+          {
+            "containerPort": 3000,
+            "protocol": "tcp"
+          }
+        ],
+        "essential": true,
+        "environment": [
+          { "name": "S3_BUCKET",      "value": "pty-submissions-bucket" }
+        ]
+        
+      }
+    ]
+  }
+  
